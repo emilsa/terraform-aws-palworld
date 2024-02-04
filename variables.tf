@@ -13,7 +13,7 @@ variable "subnet_cidr_block" {
 variable "subnet_availability_zone" {
   description = "The AZ of the subnet to be created within the VPC"
   type        = string
-  default     = "eu-north-1"
+  default     = "eu-north-1a"
 }
 
 variable "create_ssh_key" {
@@ -98,7 +98,7 @@ variable "palworldsettings_ini_path" {
 variable "enable_s3_backups" {
   description = "True or False. Set to true to enable backing up of the ShooterGame/Saved directory to S3"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "backup_s3_bucket_arn" {
@@ -123,7 +123,7 @@ variable "backup_interval_cron_expression" {
 variable "create_backup_s3_bucket" {
   description = "True or False. Do you want to create an S3 bucket to FTP backups into"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "s3_bucket_backup_retention" {
@@ -512,13 +512,13 @@ variable "server_description" {
 variable "admin_password" {
   description = "Admin password"
   type        = string
-  default     = "RockwellSucks"
+  default     = "palpassord"
 }
 
 variable "server_password" {
   description = "Server password"
   type        = string
-  default     = "RockwellSucks"
+  default     = "palpassord"
 }
 
 variable "public_port" {
@@ -548,7 +548,7 @@ variable "rcon_port" {
 variable "region" {
   description = "Server region"
   type        = string
-  default     = ""
+  default     = "eu-north-1"
 }
 
 variable "use_auth" {
