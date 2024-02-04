@@ -14,7 +14,7 @@ variable "subnet_cidr_block" {
 variable "subnet_availability_zone" {
   description = "The AZ of the subnet to be created within the VPC"
   type        = string
-  default     = "us-east-1a"
+  default     = "eu-north-1"
 }
 
 ### Security Group Variables ###

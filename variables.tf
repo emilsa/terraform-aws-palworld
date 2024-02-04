@@ -13,7 +13,7 @@ variable "subnet_cidr_block" {
 variable "subnet_availability_zone" {
   description = "The AZ of the subnet to be created within the VPC"
   type        = string
-  default     = "us-east-1a"
+  default     = "eu-north-1"
 }
 
 variable "create_ssh_key" {
@@ -500,7 +500,7 @@ variable "server_player_max_num" {
 variable "server_name" {
   description = "Server name"
   type        = string
-  default     = "AWSWorldTest"
+  default     = "Palworld aws"
 }
 
 variable "server_description" {
