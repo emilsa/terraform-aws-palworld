@@ -142,13 +142,13 @@ variable "force_destroy" {
 variable "start_from_backup" {
   description = "True of False. Set true to start the server from an existing palworld save. Requires existing save game files."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "backup_files_storage_type" {
   description = "The location of your save game files that you wish to start the server with. Supported options are `local` or `s3'. `local` means the save game files exist somewhere on the host you are running terraform apply from. `s3` means the files exist in an s3 bucket."
   type        = string
-  default     = "local"
+  default     = "s3"
 
   validation {
     condition     = var.backup_files_storage_type == "local" || var.backup_files_storage_type == "s3"
@@ -167,20 +167,20 @@ variable "backup_files_local_path" {
 variable "dedicated_server_name_hash" {
   description = "The DedicatedServerName= value from the old servers GameUserSettings.ini. Will be set on the new server to ensure data properly loads with backup data."
   type        = string
-  default     = ""
+  default     = "7623A57646144B298248F2DDCBA41800"
 }
 
 # if backup_files_storage_type s3 && start_from_backup = true
 variable "existing_backup_files_bootstrap_bucket_arn" {
   description = "The ARN of an existing S3 bucket with Palworld save game data. Files will be downloaded to the server. Objects must be in the root of the S3 bucket and not compressed."
   type        = string
-  default     = ""
+  default     = "arn:aws:s3:::palworld-backups-955158063377"
 }
 
 variable "existing_backup_files_bootstrap_bucket_name" {
   description = "The Name of an existing S3 bucket with Palworld save game data. Files will be downloaded to the server. Objects must be in the root of the S3 bucket and not compressed."
   type        = string
-  default     = ""
+  default     = "palworld-backups-955158063377"
 }
 
 ###############################################
